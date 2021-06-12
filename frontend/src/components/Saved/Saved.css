@@ -1,0 +1,14 @@
+.Saved {
+    margin: 0 auto;
+    margin-top: 1.25rem;
+    width: 80%;
+    max-width: 1200px;
+    border: solid 3px #393D3F;
+    color: #393D3F;
+    font-family: "Poppins", sans-serif;
+    padding: 1rem;
+}
+
+.Saved h2 {
+    font-size: 1.2rem;
+}

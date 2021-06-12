@@ -1,18 +1,10 @@
 import React from 'react'
-import './BookResult.css'
-import axios from 'axios'
+import './BookSaved.css'
 
-function BookResult(props) {
+function BookSaved(props) {
 
-    const handleSave = () => {
-        axios.post('http://localhost:8080/api/books', {
-            title: props.title,
-            authors: props.authors,
-            infoLink: props.infoLink,
-            imageLink: props.imageLink,
-            desc: props.desc
-        })
-        console.log('firing!')
+    const handleDelete = () => {
+        console.log('deteled!')
     }
     
     return (
@@ -26,7 +18,7 @@ function BookResult(props) {
                     <button>
                         <a href={props.infoLink} target="_blank">View</a>
                     </button>
-                    <button onClick={handleSave}>Save</button>
+                    <button onClick={handleDelete}>Delete</button>
                 </div>
             </div>
             <div className="bottom-half">
@@ -37,4 +29,4 @@ function BookResult(props) {
     )
 }
 
-export default BookResult
+export default BookSaved

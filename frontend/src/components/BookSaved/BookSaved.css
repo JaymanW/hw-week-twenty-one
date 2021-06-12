@@ -1,0 +1,46 @@
+.BookSaved {
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid #393D3F;
+    padding: 1rem 1.5rem;
+}
+
+.BookSaved .top-half {
+    display: flex;
+    justify-content: space-between;
+}
+
+.BookSaved .top-half-left p {
+    font-size: 0.8rem;
+}
+
+.BookSaved .top-half-right button {
+    background: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.BookSaved .top-half-right a {
+    color: #393D3F;
+    text-decoration: none;
+}
+
+.BookSaved .top-half-right button:nth-child(n+2) {
+    margin-left: 0.5rem;
+}
+
+.BookSaved .bottom-half {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.BookSaved .bottom-half img {
+    display: block;
+    width: 100px;
+    height: auto;
+}
+
+.BookSaved .bottom-half p {
+    font-size: 0.8rem;
+    margin-left: 1rem;
+}
