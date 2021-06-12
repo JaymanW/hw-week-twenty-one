@@ -1,0 +1,50 @@
+.App .menu {
+  height: 10vh;
+  padding: 0rem 2rem;
+  background: #E76D83;
+  display: flex;
+  align-items: center;
+}
+
+.App .menu .logo {
+  color: #f6e4e4;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.App .menu ul {
+  list-style: none;
+  display: flex;
+  margin-left: 1.25rem;
+}
+
+.App .menu .nav-link {
+  font-family: "Poppins", sans-serif;
+  color: #f6e4e4;
+  text-decoration: none;
+}
+
+.App .menu .nav-link:hover {
+  text-decoration: underline;
+}
+
+.App .menu li:nth-child(n+2) {
+  margin-left: 0.5rem;
+}
+
+.App .banner {
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  width: 80%;
+  max-width: 1200px;
+  border: solid 5px #393D3F;
+  color: #393D3F;
+  text-align: center;
+  padding: 0.5rem 0 4rem 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.App .banner p {
+  font-size: 1.2rem;
+}
