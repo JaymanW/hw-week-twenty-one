@@ -56,6 +56,11 @@ const setBooks = async (title, authors, infoLink, imageLink, desc) => {
   }
 }
 
+const removeBook = async (bookTitle) => {
+  const booksDB = client.db("booksDB").collection("books");
+  await booksDB.deleteOne({ title: bookTitle});
+}
+
 // GET BOOKS ROUTE
 app.get('/api/books', async (req, res) => {
   const result = await getBooks();
@@ -70,6 +75,11 @@ app.post('/api/books', (req, res) => {
 })
 
 // DELTE BOOKS ROUTE
+app.delete('/api/books/:id', (req, res) => {
+  // console.log(req.params.id);
+  removeBook(req.params.id);
+  res.status(201).json({ success: true });
+})
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`)

@@ -22,9 +22,9 @@ function Saved() {
             });
     }, [])
 
-    // useEffect(() => {
-    //     console.log(savedBooks);
-    // }, [savedBooks])
+    useEffect(() => {
+        console.log(savedBooks);
+    }, [savedBooks])
     
     return (
         <div className="Saved">
@@ -37,6 +37,7 @@ function Saved() {
                         infoLink={book.infoLink}
                         imageLink={book.imageLink}
                         desc={book.desc}
+                        id={book._id}
                         key={i}
                     />
                 })

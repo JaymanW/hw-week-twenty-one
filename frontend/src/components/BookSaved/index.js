@@ -1,10 +1,13 @@
 import React from 'react'
 import './BookSaved.css'
+import axios from 'axios'
 
 function BookSaved(props) {
 
     const handleDelete = () => {
-        console.log('deteled!')
+        axios.delete(`http://localhost:8080/api/books/${props.title}`)
+        window.location.reload();
+        // console.log(props.id)
     }
     
     return (
