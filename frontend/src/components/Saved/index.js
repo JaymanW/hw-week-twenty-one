@@ -8,7 +8,7 @@ function Saved() {
     const [savedBooks, setSavedBooks] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/books')
+        axios.get('https://hw-week-twenty-one.herokuapp.com/api/books')
             .then(function (response) {
                 // handle success
                 setSavedBooks(response.data);
