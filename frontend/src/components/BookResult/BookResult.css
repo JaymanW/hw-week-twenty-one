@@ -1,0 +1,41 @@
+.BookResult {
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid #393D3F;
+    padding: 1rem 1.5rem;
+}
+
+.BookResult .top-half {
+    display: flex;
+    justify-content: space-between;
+}
+
+.BookResult .top-half-left p {
+    font-size: 0.8rem;
+}
+
+.BookResult .top-half-right button {
+    background: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.BookResult .top-half-right button:nth-child(n+2) {
+    margin-left: 0.5rem;
+}
+
+.BookResult .bottom-half {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.BookResult .bottom-half img {
+    display: block;
+    width: 100px;
+    height: auto;
+}
+
+.BookResult .bottom-half p {
+    font-size: 0.8rem;
+    margin-left: 1rem;
+}

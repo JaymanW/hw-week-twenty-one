@@ -19,7 +19,7 @@ function Search() {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}+inauthor`)
             .then(function (response) {
                 // handle success
-                // console.log(response.data.items);
+                console.log(response.data.items);
                 setSearchResults(response.data.items)
             })
             .catch(function (error) {
