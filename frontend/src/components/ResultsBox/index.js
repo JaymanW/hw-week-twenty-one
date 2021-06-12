@@ -1,6 +1,8 @@
 import React from 'react'
+import './ResultsBox.css'
 
-function ResultsBox() {
+function ResultsBox(props) {
+    
     return (
         <div className="ResultsBox">
             <h2>Results</h2>

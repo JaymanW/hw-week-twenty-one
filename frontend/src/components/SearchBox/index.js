@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './SearchBox.css'
 
-function SearchBox() {
+function SearchBox(props) {
     const [search, setSearch] = useState('');
 
     // useEffect(() => {
@@ -20,8 +20,8 @@ function SearchBox() {
         <div className="SearchBox">
             <h2>Book Search</h2>
             <p>Book Title</p>
-            <input type="text" value={search} onChange={handleChange} placeholder="ex. Hunger Games..." />
-            <button onClick={handleSearch}>Search</button>
+            <input type="text" value={props.searchValue} onChange={props.onSearchValue} placeholder="ex. Hunger Games..." />
+            <button onClick={props.onSearchBtn}>Search</button>
         </div>
     )
 }
