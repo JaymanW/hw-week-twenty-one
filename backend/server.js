@@ -11,25 +11,10 @@ app.use(cors());
 const port = 8080;
 
 const MongoClient = require('mongodb').MongoClient;
-// const uri = `mongodb+srv://dbUser:${process.env.mongo_password}@slider.opswz.mongodb.net/booksDB?retryWrites=true&w=majority`;
 const uri = `mongodb+srv://dbUser:${process.env.mongo_password}@cluster0.krusy.mongodb.net/booksDB?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, useUnifiedTopology: true, connectTimeoutMS: 30000, keepAlive: 1 });
 
 client.connect()
-
-// const getLeaderboard3 = async () => {
-//   try {
-//     // await client.connect();
-//     const leaderboard3 = client.db("slider").collection("leaderboard3");
-//     const query = leaderboard3.find({}).sort({ score: 1 }).limit(3);
-//     const result = await query.toArray();
-//     return result;
-//   } catch (err) {
-//     console.error(err);
-//   } finally {
-    
-//   }
-// }
 
 const getBooks = async () => {
   try {
