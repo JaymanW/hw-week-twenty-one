@@ -17,18 +17,32 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 client.connect()
 
-// const setLeaderboard4 = async (username, score) => {
+// const getLeaderboard3 = async () => {
 //   try {
 //     // await client.connect();
-//     const leaderboard4 = client.db("slider").collection("leaderboard4");
-//     await leaderboard4.insertOne( { username: username, score: score } );
-//     console.log(`Insterted ${username}'s score of ${score} successfully!`);
+//     const leaderboard3 = client.db("slider").collection("leaderboard3");
+//     const query = leaderboard3.find({}).sort({ score: 1 }).limit(3);
+//     const result = await query.toArray();
+//     return result;
 //   } catch (err) {
 //     console.error(err);
 //   } finally {
-
+    
 //   }
 // }
+
+const getBooks = async () => {
+  try {
+    const booksDB = client.db("booksDB").collection("books");
+    const query = booksDB.find({}).sort({ title: 1 }).limit(10);
+    const result = await query.toArray();
+    return result;
+  } catch (err) {
+    console.error(err);
+  } finally {
+    
+  }
+}
 
 const setBooks = async (title, authors, infoLink, imageLink, desc) => {
   try {
@@ -42,16 +56,11 @@ const setBooks = async (title, authors, infoLink, imageLink, desc) => {
   }
 }
 
-app.get('/', (req, res) => {
-    res.send('hello');
-})
-
 // GET BOOKS ROUTE
-
-// const { username, score } = req.body;
-//   setLeaderboard3(username, score);
-//   res.status(201).json({ success: true });
-
+app.get('/api/books', async (req, res) => {
+  const result = await getBooks();
+  res.send(result);
+})
 
 // POST BOOKS ROUTE
 app.post('/api/books', (req, res) => {

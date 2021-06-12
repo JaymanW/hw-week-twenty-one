@@ -4,7 +4,6 @@ import './ResultsBox.css'
 import BookResult from '../BookResult'
 
 function ResultsBox(props) {
-    console.log(props.data)
 
     return (
         <div className="ResultsBox">

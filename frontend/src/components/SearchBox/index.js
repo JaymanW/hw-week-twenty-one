@@ -2,20 +2,6 @@ import React, { useState, useEffect } from 'react'
 import './SearchBox.css'
 
 function SearchBox(props) {
-    const [search, setSearch] = useState('');
-
-    // useEffect(() => {
-    //     console.log(search)
-    // }, [search])
-
-    const handleChange = (e) => {
-        setSearch(e.target.value);
-    }
-
-    const handleSearch = () => {
-        // pass up input information to be queried and displayed
-    }
-    
     return (
         <div className="SearchBox">
             <h2>Book Search</h2>
