@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
@@ -6,6 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
+app.use(cors());
 const port = 8080;
 
 const MongoClient = require('mongodb').MongoClient;
@@ -15,7 +17,30 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 client.connect()
 
-// Google Books API Query => https://www.googleapis.com/books/v1/volumes?q=${titleQuery}+intitle
+// const setLeaderboard4 = async (username, score) => {
+//   try {
+//     // await client.connect();
+//     const leaderboard4 = client.db("slider").collection("leaderboard4");
+//     await leaderboard4.insertOne( { username: username, score: score } );
+//     console.log(`Insterted ${username}'s score of ${score} successfully!`);
+//   } catch (err) {
+//     console.error(err);
+//   } finally {
+
+//   }
+// }
+
+const setBooks = async (title, authors, infoLink, imageLink, desc) => {
+  try {
+    const booksDB = client.db("booksDB").collection("books");
+    await booksDB.insertOne( { title: title, authors: authors, infoLink: infoLink, imageLink: imageLink, desc: desc } );
+    console.log(`Insterted book successfully!`);
+  } catch (err) {
+    console.error(err);
+  } finally {
+
+  }
+}
 
 app.get('/', (req, res) => {
     res.send('hello');
@@ -23,7 +48,17 @@ app.get('/', (req, res) => {
 
 // GET BOOKS ROUTE
 
+// const { username, score } = req.body;
+//   setLeaderboard3(username, score);
+//   res.status(201).json({ success: true });
+
+
 // POST BOOKS ROUTE
+app.post('/api/books', (req, res) => {
+  const { title, authors, infoLink, imageLink, desc } = req.body;
+  setBooks(title, authors, infoLink, imageLink, desc);
+  res.status(201).json({ success: true });
+})
 
 // DELTE BOOKS ROUTE
 

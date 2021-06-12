@@ -20,6 +20,11 @@
     cursor: pointer;
 }
 
+.BookResult .top-half-right a {
+    color: #393D3F;
+    text-decoration: none;
+}
+
 .BookResult .top-half-right button:nth-child(n+2) {
     margin-left: 0.5rem;
 }

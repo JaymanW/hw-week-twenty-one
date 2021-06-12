@@ -17,6 +17,7 @@ function ResultsBox(props) {
                         infoLink={book.volumeInfo.infoLink}
                         imageLink={book.volumeInfo.imageLinks.smallThumbnail}
                         desc={book.volumeInfo.description}
+                        key={i}
                     />
                 })
             }

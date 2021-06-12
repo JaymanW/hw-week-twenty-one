@@ -1,19 +1,24 @@
 import React from 'react'
 import './BookResult.css'
+import axios from 'axios'
 
 function BookResult(props) {
-    const title = "Hunger Games"
-    const author = `John Arthur`
-    const image = "http://books.google.com/books/content?id=mKojrgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api"
-    const desc = "In exclusive collaboration with Lionsgate, Assouline presents Tim Palen: Photographs from The Hunger Games. Compiled in one deluxe volume, Palen s portraits capture each character with striking intimacy and transform the high-octane adventure of the films into exquisite visual art. Through Palen s unique lens, characters become icons, immortalized as the beloved characters the world has embraced."
-    const viewLink = "http://books.google.com/books?id=mKojrgEACAAJ&dq=Hunger+Games+inauthor&hl=&source=gbs_api"
 
-    const handleView = () => {
-        console.log(`VIEWED BOOK`)
-    }
+    // title={book.volumeInfo.title}
+    // authors={book.volumeInfo.authors}
+    // infoLink={book.volumeInfo.infoLink}
+    // imageLink={book.volumeInfo.imageLinks.smallThumbnail}
+    // desc={book.volumeInfo.description}
 
     const handleSave = () => {
-        console.log(`SAVED BOOK`)
+        axios.post('http://localhost:8080/api/books', {
+            title: props.title,
+            authors: props.authors,
+            infoLink: props.infoLink,
+            imageLink: props.imageLink,
+            desc: props.desc
+        })
+        console.log('firing!')
     }
     
     return (
@@ -21,11 +26,12 @@ function BookResult(props) {
             <div className="top-half">
                 <div className="top-half-left">
                     <h3>{props.title}</h3>
-                    {/* JOIN AUTHORS */}
                     <p>{`Written by: ${props.authors}`}</p>
                 </div>
                 <div className="top-half-right">
-                    <button onClick={handleView}>View</button>
+                    <button>
+                        <a href={props.infoLink} target="_blank">View</a>
+                    </button>
                     <button onClick={handleSave}>Save</button>
                 </div>
             </div>
