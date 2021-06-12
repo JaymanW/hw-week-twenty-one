@@ -1,0 +1,27 @@
+.SearchBox {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+    border: solid 3px #393D3F;
+    color: #393D3F;
+    font-family: "Poppins", sans-serif;
+    padding: 1rem;
+}
+
+.SearchBox input {
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.75rem;
+    width: 100%;
+    border: 2px solid #393D3F;
+    padding: 0.25rem;
+}
+
+.SearchBox button {
+    display: block;
+    margin-left: auto;
+    margin-top: 0.5rem;
+    background: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}

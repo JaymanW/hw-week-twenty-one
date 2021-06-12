@@ -18,7 +18,7 @@ function App() {
             <a href="/" className="logo">Google Books</a>
             <ul>
               <li>
-                <Link to="/search" className="nav-link">Search</Link>
+                <Link to="/" className="nav-link">Search</Link>
               </li>
               <li>
                 <Link to="/saved" className="nav-link">Saved</Link>
@@ -30,11 +30,11 @@ function App() {
             <p>Search for and Save Books of Interest.</p>
           </div>
           <Switch>
-            <Route path="/search">
-              <Search />
-            </Route>
             <Route path="/saved">
               <Saved />
+            </Route>
+            <Route path="/">
+              <Search />
             </Route>
           </Switch>
       </div>
